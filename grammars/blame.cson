@@ -1,0 +1,11 @@
+'fileTypes': [
+  'blame'
+]
+'name': 'Blame'
+'patterns': [
+  {
+    'match': '\w{8}(?=\s)'
+    'name': 'markup.deleted.diff'
+  }
+]
+'scopeName': 'source.blame'

@@ -5,6 +5,7 @@ OutputViewManager      = require './output-view-manager'
 GitPaletteView         = require './views/git-palette-view'
 GitAdd                 = require './models/git-add'
 GitBranch              = require './models/git-branch'
+GitBlame               = require './models/git-blame'
 GitDeleteLocalBranch   = require './models/git-delete-local-branch.coffee'
 GitDeleteRemoteBranch  = require './models/git-delete-remote-branch.coffee'
 GitCheckoutAllFiles    = require './models/git-checkout-all-files'
@@ -128,6 +129,7 @@ module.exports =
     @subscriptions.add atom.commands.add 'atom-workspace', 'git-plus:merge', -> git.getRepo().then((repo) -> GitMerge(repo))
     @subscriptions.add atom.commands.add 'atom-workspace', 'git-plus:merge-remote', -> git.getRepo().then((repo) -> GitMerge(repo, remote: true))
     @subscriptions.add atom.commands.add 'atom-workspace', 'git-plus:rebase', -> git.getRepo().then((repo) -> GitRebase(repo))
+    @subscriptions.add atom.commands.add 'atom-workspace', 'git-plus:blame', -> git.getRepo().then((repo) -> GitBlame(repo))
 
   deactivate: ->
     @subscriptions.dispose()

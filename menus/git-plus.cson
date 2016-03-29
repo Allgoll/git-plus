@@ -66,6 +66,10 @@
           'command': 'git-plus:pull-using-rebase'
         }
         {
+          'label': 'Blame Current File'
+          'command': 'git-plus:blame'
+        }
+        {
           'label': 'Rebase'
           'command': 'git-plus:rebase'
         }
